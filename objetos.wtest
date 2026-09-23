@@ -1,0 +1,39 @@
+import objetos.*
+import wollok.game.*
+
+describe "futbolito" {
+  test "patear" {
+    assert.throwsException({lionel.patear()})
+    lionel.position(game.at(5, 5))
+    assert.equals(lionel.position(), pelota.position())
+    lionel.patear()
+    const pelotaPateada = game.at(8,5)
+    assert.equals(pelota.position(), pelotaPateada)
+  }
+    test "buscar pelota" {
+        assert.notEquals(pelota.position(), lionel.position())
+        lionel.buscar()
+        assert.equals(pelota.position(), lionel.position())
+    }
+
+    test "inicio" {
+        const origen = game.at(0,5)
+        assert.notEquals(origen, pelota.position())
+        pelota.inicio()
+        assert.equals(origen, pelota.position())
+    }
+
+    test "Test de taquito" {
+        assert.throwsException({lionel.taquito()})
+        lionel.position(game.at(5,5))
+        assert.equals(lionel.position(), pelota.position())
+        lionel.taquito()
+        assert.equals(game.at(3,5), pelota.position())
+        }
+
+    test "test de sombrero" {
+      assert.throwsException({lionel.sombrero()})
+      lionel.buscar()
+      lionel.sombrero()
+    }
+}
