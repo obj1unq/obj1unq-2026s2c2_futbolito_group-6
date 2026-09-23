@@ -30,4 +30,10 @@ describe "futbolito" {
         lionel.taquito()
         assert.equals(game.at(3,5), pelota.position())
         }
+
+    test "test de sombrero" {
+      assert.throwsException({lionel.sombrero()})
+      lionel.buscar()
+      lionel.sombrero()
+    }
 }
