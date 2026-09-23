@@ -1,0 +1,9 @@
+import objetos.*
+describe " test de futbolito" {
+    test "Test de taquito" {
+        lionel.buscar()
+        assert.equals(lionel.position(), pelota.position())
+        lionel.taquito()
+        assert.equals(game.at(3,5), pelota.position())
+    }
+}
