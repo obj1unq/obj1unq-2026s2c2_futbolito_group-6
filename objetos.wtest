@@ -16,7 +16,8 @@ describe "tests de futbolito" {
     }
 
     test "Test de taquito" {
-        lionel.buscar()
+        assert.throwsException({lionel.taquito()})
+        lionel.position(game.at(5,5))
         assert.equals(lionel.position(), pelota.position())
         lionel.taquito()
         assert.equals(game.at(3,5), pelota.position())
