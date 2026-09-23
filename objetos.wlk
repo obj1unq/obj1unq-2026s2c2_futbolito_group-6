@@ -44,7 +44,12 @@ object lionel {
 	method buscar() {
 		position = objetivo.position()
 	}
-	
+
+	method sombrero(){
+		self.validarSiPelotaEstaEnLionel()
+		objetivo.subirPelota()
+		game.schedule(2000, {objetivo.bajarPelota()})
+	}
 }
 
 
@@ -63,5 +68,13 @@ object pelota {
 
 	method patear(){
 		position = game.at((position.x() + 3).min(game.width() - 1), position.y())
+	}
+
+	method subirPelota() {
+		position = self.position().up(1)
+	}
+
+	method bajarPelota() {
+	    position = self.position().down(1)
 	}
 }
