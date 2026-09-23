@@ -1,9 +1,24 @@
 import objetos.*
-describe " test de futbolito" {
+
+describe "tests de futbolito" {
+
+    test "buscar pelota" {
+        assert.notEquals(pelota.position(), lionel.position())
+        lionel.buscar()
+        assert.equals(pelota.position(), lionel.position())
+    }
+
+    test "inicio" {
+        const origen = game.at(0,5)
+        assert.notEquals(origen, pelota.position())
+        pelota.inicio()
+        assert.equals(origen, pelota.position())
+    }
+
     test "Test de taquito" {
         lionel.buscar()
         assert.equals(lionel.position(), pelota.position())
         lionel.taquito()
         assert.equals(game.at(3,5), pelota.position())
-    }
+        }
 }

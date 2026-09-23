@@ -21,7 +21,7 @@ object lionel {
 	method buscar() {
 		position = objetivo.position()
 	}
-
+	
 	method taquito() {
 	  self.validarSiPelotaEstaEnLionel()
 	  objetivo.moverAtras()
